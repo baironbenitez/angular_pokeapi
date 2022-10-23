@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon/icomoon.eot?t0uvi8');
+  src:  url('../fonts/icomoon/icomoon.eot?t0uvi8#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/icomoon.ttf?t0uvi8') format('truetype'),
+    url('../fonts/icomoon/icomoon.woff?t0uvi8') format('woff'),
+    url('../fonts/icomoon/icomoon.svg?t0uvi8#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+$colors:"grass" #5fbd58,"fire" #fba54c;
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-regla:before {
+  content: "\e900";
+}
+.icon-balansa:before {
+  content: "\e901";
+}
+.icon-pokeball:before {
+  content: "\e902";
+}
+.icon-loading:before {
+  content: "\e903";
+}

@@ -1,4 +1,184 @@
-/* You can add global styles to this file, and also import other style files */
-
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+@import './assets/scss/icomoon.scss';
+@import './assets/scss/variables.scss';
+@import './assets/scss/color.scss';
+
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: black;
+    color: white !important;
+}
+
+/* Animaciones */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+.spin{
+    animation-name: spinner;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spinner {
+    0%{
+        transform:rotate(0deg);
+    }
+    100% { 
+        transform: rotate(360deg);
+    }
+}
+
+.grass{
+    .content-icon-type{
+        background: #5fbd58;
+        box-shadow: 0 0 20px #5fbd58;
+    }    
+}
+
+.fire{
+    .content-icon-type{
+        background: #fba54c;
+        box-shadow: 0 0 20px #fba54c;
+    }
+}
+
+.water{
+    .content-icon-type{
+        background: #539ddf;
+        box-shadow: 0 0 20px #539ddf;
+    }
+}
+
+.bug{
+    .content-icon-type{
+        background: #92bc2c;
+        box-shadow: 0 0 20px #92bc2c;
+    }
+}
+
+.normal{
+
+    .content-icon-type{
+        background: #a0a29f;
+        box-shadow: 0 0 20px #a0a29f;
+    }
+}
+
+.poison{
+    .content-icon-type{
+        background: #b763cf;
+        box-shadow: 0 0 20px #b763cf;
+    }
+}
+
+.electric{
+    .content-icon-type{
+        background: #f2d94e;
+        box-shadow: 0 0 20px #f2d94e;
+    }
+}
+
+.ground{
+    .content-icon-type{
+        background: #da7c4d;
+        box-shadow: 0 0 20px #da7c4d;
+    }
+}
+
+
+.fairy{
+    .content-icon-type{
+        background: #ee90e6;
+        box-shadow: 0 0 20px #ee90e6;
+    }
+}
+
+
+.fighting{
+    .content-icon-type{
+        background: #d3425f;
+        box-shadow: 0 0 20px #d3425f;
+    }
+}
+
+.psychic{
+    .content-icon-type{
+        background: #fa8581;
+        box-shadow: 0 0 20px #fa8581;
+    }
+}
+
+.rock{
+    .content-icon-type{
+        background: #c9bb8a;
+        box-shadow: 0 0 20px #c9bb8a;
+    }
+}
+
+.ghost{
+    .content-icon-type{
+        background: #5f6dbc;
+        box-shadow: 0 0 20px #5f6dbc;
+    }
+}
+
+.flying{
+    .content-icon-type{
+        background: #a1bbec;
+        box-shadow: 0 0 20px #a1bbec;
+    }
+}
+
+.ice{
+    .content-icon-type{
+        background: #75d0c1;
+        box-shadow: 0 0 20px #75d0c1;
+    }
+}
+
+.dragon{
+    .content-icon-type{
+        background: #0c69c8;
+        box-shadow: 0 0 20px #0c69c8;
+    }
+}
+
+.dark{
+    .content-icon-type{
+        background: #595761;
+        box-shadow: 0 0 20px #595761;
+    }
+}
+
+.steel{
+    .content-icon-type{
+        background: #5695a3;
+        box-shadow: 0 0 20px #5695a3;
+    }
+}
