@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { PokemonsRoutingModule } from './pokemons-routing.module';
 import { PokemonsComponent } from './pokemons.component';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { PokemonsComponent } from './pokemons.component';
   ],
   imports: [
     CommonModule,
-    PokemonsRoutingModule
+    PokemonsRoutingModule,
+    NgbPaginationModule,
+    SharedModule
   ]
 })
 export class PokemonsModule { }
