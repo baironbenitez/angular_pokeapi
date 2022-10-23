@@ -1,0 +1,35 @@
+// $colors:"grass" #5fbd58,"fire" #fba54c;
+:root{
+    --color-grass:#5fbd58;
+    --color-fire:#fba54c;
+    --color-water:#539ddf;
+    --color-bug:#92bc2c;
+    --color-normal:#a0a29f;
+    --color-poison:#b763cf;
+    --color-electric:#f2d94e;
+    --color-ground:#da7c4d;
+    --color-fairy:#ee90e6;
+    --color-fighting:#d3425f;
+    --color-psychic:#fa8581;
+    --color-rock:#c9bb8a;
+    --color-steel:#5695a3;
+    --color-dark:#595761;
+    --color-dragon:#0c69c8;
+    --color-ice:#75d0c1;
+    --color-flying:#a1bbec;
+    --color-ghost:#5f6dbc;
+}
+
+@each $name,$color in $colors {
+    [color^=#{$name}]{
+        color: var(--color-#{$name}) !important;
+    }
+    
+    [bg^=#{$name}]{
+        background-color: var(--color-#{$name}) !important;
+    }
+
+    [shadow^=#{$name}]{
+       box-shadow: 0 0 6px var(--color-#{$name});
+    }
+}
