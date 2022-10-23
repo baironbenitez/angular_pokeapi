@@ -1,0 +1,14 @@
+<div [class]="'animated fadeIn card '+pokemon.types[0].type.name" (click)="goToDetail(pokemon.id)">
+    <div class="card-body">
+        <div class="d-flex mb-2 justify-content-between align-items-center">
+            <h5>#{{pokemon.id}}</h5>
+            <!-- <app-type [type]="pokemon.types[0].type"></app-type> -->
+        </div>
+        <div class="content-img-pokemon w-100">
+            <img class="w-100" [src]="pokemon.id | imgsrc" alt="pokemon">
+        </div>
+    </div>
+    <div class="content-name">
+        <p class="card-text">{{pokemon.name | titlecase}}</p>
+    </div>
+</div>
