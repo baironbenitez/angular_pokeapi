@@ -11,6 +11,7 @@ import { DirectiveModule } from './directives/directives.module';
     DirectiveModule
   ],
   exports:[
+    PipeModule,
     ComponentsModule
   ]
 })
