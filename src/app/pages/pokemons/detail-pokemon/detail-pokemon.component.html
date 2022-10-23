@@ -1,0 +1,86 @@
+<div class="my-4 mx-3 px-0 px-lg-3">
+    <ng-container *ngIf="load; else showInfo">
+        <app-loading></app-loading>
+    </ng-container>
+    <ng-template #showInfo>
+        <ng-container *ngIf="pokemon; else elseTemplate">
+            <h2 class="text-center mb-4">{{pokemon.name | titlecase}}</h2>
+            <div class="flex-wrap d-flex paginator flex-column flex-md-row justify-content-center align-items-center">
+                <div class="content-data col-12 col-md-4 col-sm-10">
+                    <div class="data">
+                        <h3 class="text-center">About</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item text-right fw-bold">Id</li>
+                            <li class="list-group-item">#{{pokemon.id}}</li>
+                        </ul>
+                        <ul class="list-group" >
+                            <li class="list-group-item text-right  fw-bold">Height</li>
+                            <li class="list-group-item"><em class="icon icon-regla"></em> {{pokemon.height/10}}m</li>
+                        </ul>
+                        <ul class="list-group" >
+                            <li class="list-group-item text-right  fw-bold">Weight</li>
+                            <li class="list-group-item"><em class="icon icon-balansa"></em> {{pokemon.height/10}}m</li>
+                        </ul>
+                        <ul class="list-group" >
+                            <li class="list-group-item text-right  fw-bold">Abilities</li>
+                            <li class="list-group-item">
+                                <div class="content-type content-ability d-flex">
+                                    <div class="type" *ngFor="let ability of pokemon.abilities | slice:0:2" >
+                                        <div [attr.bg]="pokemon.types[0].type.name" class="text-break content-icon-type p-1 d-flex justify-content-center align-items-center">
+                                            {{ability.ability.name | titlecase}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <ul class="list-group" >
+                            <li [class]="'list-group-item text-right fw-bold '+pokemon.types[0].type.name">Type</li>
+                            <li class="list-group-item">
+                                <div class="content-type d-flex">
+                                    <div class="type" [attr.bg]="type.type.name" *ngFor="let type of pokemon.types | slice:0:2" >
+                                        <app-type [type]="type.type"></app-type>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-group" >
+                            <li class="list-group-item text-right active fw-bold">Forms</li>
+                            <li class="list-group-item">{{pokemon.height/10}}m</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-image col-12 col-md-4 col-sm-10 px-3">
+                    <div class="content-img-pokemon w-100">
+                        <img class="w-100" [src]="pokemon.id | imgsrc" alt="pokemon">
+                    </div>
+                </div>
+                <div class="content-data col-12 col-md-4 col-sm-10">      
+                    <div class="data" (mouseout)="hover=false" (mouseover)="hover = true" [ngClass]="{'data-hover': hover}">
+                        <h3 class="text-center">Base state</h3>
+                        <ul class="list-group" *ngFor="let item of pokemon.stats">
+                            <li class="list-group-item text-right active fw-bold">{{item.stat.name | titlecase}}</li>
+                            <li class="list-group-item">
+                                <div class="progress w-100">
+                                    <div 
+                                        class="progress-bar progress-bar-striped progress-bar-animated" 
+                                        [attr.bg]="pokemon.types[0].type.name"
+                                        role="progressbar" 
+                                        [style]="'width:'+item.base_stat+'%;'" 
+                                        aria-valuenow="10" 
+                                        aria-valuemin="0" 
+                                        aria-valuemax="100">{{item.base_stat}}
+                                        
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <app-not-data message="Lo sentimos no encontramos este pokemon"></app-not-data>
+        </ng-template>
+    </ng-template>
+</div>

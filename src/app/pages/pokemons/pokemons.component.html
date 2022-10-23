@@ -1,0 +1,23 @@
+<div class="my-4 px-3">
+    <ng-container *ngIf="load; else showInfo">
+        <app-loading></app-loading>
+    </ng-container>
+    <ng-template #showInfo>
+        <ng-container *ngIf="pokemons.length; else elseTemplate">
+            <div class="flex-wrap d-flex paginator justify-content-center me-2">
+                <ngb-pagination size="sm" class="d-flex justify-content-center col-sm-12 " (pageChange)="getPokemons($event)" [collectionSize]="407" [(page)]="page" [maxSize]="5" [boundaryLinks]="false"></ngb-pagination>
+            </div>
+            <div class="flex-wrap d-flex paginator justify-content-center">
+                <ng-container *ngFor="let pokemon of pokemons">
+                    <app-card-pokemon class="col-sm-6 col-md-4 col-lg-3 px-2" [pokemon]="pokemon"></app-card-pokemon>
+                </ng-container>  
+            </div>
+            <div class="flex-wrap d-flex paginator justify-content-center me-2">
+                <ngb-pagination size="sm" class="d-flex justify-content-center col-sm-12 mt-2" (pageChange)="getPokemons($event)" [collectionSize]="407" [(page)]="page" [maxSize]="5" [boundaryLinks]="false"></ngb-pagination>
+            </div>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <app-not-data message="Lo sentimos no encontramos ningun pokemon"></app-not-data>
+        </ng-template>
+    </ng-template>
+</div>
