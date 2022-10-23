@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import * as COMPONENTS from './utils/components';
 import { PipeModule } from '../pipes/pipe.module';
+import { DirectiveModule } from '../directives/directives.module';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { PipeModule } from '../pipes/pipe.module';
   ],
   imports: [
     CommonModule,
-    PipeModule
+    PipeModule,
+    DirectiveModule
   ],
   exports:[
     ...COMPONENTS.default
