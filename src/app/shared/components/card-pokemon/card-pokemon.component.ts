@@ -10,12 +10,9 @@ import { Pokemon } from '@Interfaces/pokemon.interface';
 export class CardPokemonComponent{
   @Input() pokemon!:Pokemon;
   
-  constructor (private router:Router){
-
-  }
+  constructor (private router:Router){}
 
   goToDetail(id:number):void{
-   console.log(id);
+   this.router.navigate(['pokemons', id]);
   }
-
 }

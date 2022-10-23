@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path:'',
     component:PokemonsComponent
+  },
+  {
+    path:':id',
+    loadChildren:()=>import('./detail-pokemon/detail-pokemon.module').then(m=>m.DetailPokemonModule)
   }
 ];
 
