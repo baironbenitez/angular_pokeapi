@@ -1,1 +1,18 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand"  role="button" routerLink="pokemons"><span class="icon icon-pokeball"></span> PokeApp</a>
+    <button (click)="isMenuCollapsed = !isMenuCollapsed" class="navbar-toggler" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li  role="button" class="nav-item text-center" >
+                <a class="nav-link" routerLinkActive="active" routerLink="/pokemons">Pokemons</a>
+            </li>
+            <li  role="button" class="nav-item text-center" >
+                <a class="nav-link" routerLinkActive="active" routerLink="/types">Types</a>
+            </li>
+        </ul>
+    </div>
+</nav>
