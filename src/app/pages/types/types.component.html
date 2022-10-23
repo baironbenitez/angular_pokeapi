@@ -1,0 +1,17 @@
+<div class="my-4 px-3">
+    <ng-container *ngIf="load; else showInfo">
+        <app-loading></app-loading>
+    </ng-container>
+    <ng-template #showInfo>
+        <ng-container *ngIf="types.length; else elseTemplate">
+            <div class="flex-wrap d-flex paginator justify-content-center">
+                <ng-container *ngFor="let type of types | slice:0:18">
+                   <app-type class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 px-3" [type]="type"></app-type>
+                </ng-container>  
+            </div>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <app-not-data message="Lo sentimos no encontramos ningun tipo de pokemon"></app-not-data>
+        </ng-template>
+    </ng-template>
+</div>
