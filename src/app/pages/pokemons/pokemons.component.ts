@@ -24,7 +24,7 @@ export class PokemonsComponent implements OnInit {
     this.load = true;
     this.pokemonService.getAllPokemon(this.page - 1).subscribe({
       next:(res)=>{
-        // this.pokemons = res;
+        this.pokemons = res;
         this.load = false;
       },
       error:()=>{
