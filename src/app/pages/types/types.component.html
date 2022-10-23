@@ -6,7 +6,7 @@
         <ng-container *ngIf="types.length; else elseTemplate">
             <div class="flex-wrap d-flex paginator justify-content-center">
                 <ng-container *ngFor="let type of types | slice:0:18">
-                   <app-type [disabled]="false" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 px-3" [type]="type"></app-type>
+                   <app-type class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 px-3" [type]="type"></app-type>
                 </ng-container>  
             </div>
         </ng-container>

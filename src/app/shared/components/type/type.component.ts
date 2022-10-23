@@ -7,21 +7,6 @@ import { Ability } from '@Interfaces/pokemon.interface';
   templateUrl: './type.component.html',
   styleUrls: ['./type.component.scss']
 })
-export class TypeComponent implements OnInit {
-  
+export class TypeComponent{  
   @Input() type!:Ability;
-  @Input() disabled = true;
-
-
-  constructor(private router:Router) { }
-
-  ngOnInit(): void { 
-  }
-
-  goToType():void{
-    if (!this.disabled) {
-      this.router.navigate(['types',this.type.name])
-    }
-  }
-
 }
